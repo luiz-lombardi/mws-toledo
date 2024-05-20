@@ -1,0 +1,2225 @@
+{
+	"info": {
+		"_postman_id": "e160fa12-f39c-4730-9d46-25f36529ce0c",
+		"name": "MWS_Service",
+		"description": "\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ObtemVersao",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "88d95bd1-d6bc-4b09-8a1e-eb718509641f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ed01dab-c744-46a4-b6e0-dd968213d7d5",
+						"exec": [
+							"var jsonObject = xml2Json(pm.response.text());\r",
+							"jsonObject['s:Envelope']['s:Body']['ObtemVersaoResponse']['ObtemVersaoResult'];\r",
+							"\r",
+							"pm.test(\"Versao OK!\", function () {\r",
+							"    varjsonObject = xml2Json(responseBody);\r",
+							"    console.log(jsonObject['s:Envelope']['s:Body']['ObtemVersaoResponse']['ObtemVersaoResult']);\r",
+							"    pm.expect(jsonObject['s:Envelope']['s:Body']['ObtemVersaoResponse']['ObtemVersaoResult']).to.eql(\"6.21.20\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "52ef2176-9dd0-4543-9302-870ea1250f2b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=UTF-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ObtemVersao"
+					},
+					{
+						"key": "ResponseFormat",
+						"value": "WebMessageFormat.Json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ObtemVersao xmlns=\"http://tempuri.org/\"></ObtemVersao>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "c543961c-6a14-476a-a573-27db0a34e86f",
+					"name": "ObtemVersao response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ObtemVersao"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ObtemVersao xmlns=\"http://tempuri.org/\"/>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ObtemVersaoResponse xmlns=\"http://tempuri.org/\">\n      <ObtemVersaoResult>string</ObtemVersaoResult>\n    </ObtemVersaoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ExportaMovimento",
+			"id": "2467b0d6-aa09-43e8-b4b0-b63aa6b70f25",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ExportaMovimento"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ExportaMovimento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n    </ExportaMovimento>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "59816046-46d9-4188-bc4b-4b4b0ba133d5",
+					"name": "ExportaMovimento response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ExportaMovimento"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ExportaMovimento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n    </ExportaMovimento>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ExportaMovimentoResponse xmlns=\"http://tempuri.org/\">\n      <dadosMovimento/>\n      <qtdRegistrosAnalisados>100</qtdRegistrosAnalisados>\n      <erro>100</erro>\n    </ExportaMovimentoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConfirmaLeituraMovimento",
+			"id": "c7fa9826-82ee-4a75-9aa0-97e435450f0d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConfirmaLeituraMovimento"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConfirmaLeituraMovimento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n    </ConfirmaLeituraMovimento>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "5ece464d-0802-43c7-a652-42d66587f8ae",
+					"name": "ConfirmaLeituraMovimento response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConfirmaLeituraMovimento"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConfirmaLeituraMovimento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n    </ConfirmaLeituraMovimento>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConfirmaLeituraMovimentoResponse xmlns=\"http://tempuri.org/\">\n      <erro>100</erro>\n    </ConfirmaLeituraMovimentoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaMovimento",
+			"id": "86fb7047-4dd6-4a31-a623-066a8146f91c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaMovimento"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaMovimento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dadosMovimento/>\n    </ImportaMovimento>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "5caca711-34aa-49b6-a396-9b8fec4cd27b",
+					"name": "ImportaMovimento response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaMovimento"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaMovimento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dadosMovimento/>\n    </ImportaMovimento>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaMovimentoResponse xmlns=\"http://tempuri.org/\">\n      <erro>100</erro>\n      <Retorno/>\n    </ImportaMovimentoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaMovimentoListaEstrangeiro",
+			"id": "17533296-2a8f-4664-b63b-6f562d51158b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaMovimentoListaEstrangeiro"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaMovimentoListaEstrangeiro xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dadosMovimento/>\n    </ImportaMovimentoListaEstrangeiro>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "fd84a044-693f-4d2e-940f-667406ac2634",
+					"name": "ImportaMovimentoListaEstrangeiro response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaMovimentoListaEstrangeiro"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaMovimentoListaEstrangeiro xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dadosMovimento/>\n    </ImportaMovimentoListaEstrangeiro>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaMovimentoListaEstrangeiroResponse xmlns=\"http://tempuri.org/\">\n      <erro>100</erro>\n      <ErroLog>string</ErroLog>\n      <RetornoIntegracao/>\n    </ImportaMovimentoListaEstrangeiroResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaMensagem",
+			"id": "b39f04c4-8d34-4158-acd1-0501f692e2cf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaMensagem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaMensagem xmlns=\"http://tempuri.org/\">\n      <numero>7482</numero>\n    </ConsultaMensagem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "d52bd6b2-9a8d-44d4-8336-e1c55d37ed5c",
+					"name": "ConsultaMensagem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaMensagem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaMensagem xmlns=\"http://tempuri.org/\">\n      <numero>100</numero>\n    </ConsultaMensagem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaMensagemResponse xmlns=\"http://tempuri.org/\">\n      <mensagem>string</mensagem>\n      <erro>100</erro>\n    </ConsultaMensagemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaItem",
+			"id": "7afd938c-0a44-4d53-aa09-bb5120dcf514",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaItem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>11048</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "66179ceb-2774-4633-83d6-7411d0384449",
+					"name": "ConsultaItem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaItem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>string</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItemResponse xmlns=\"http://tempuri.org/\">\n      <item/>\n      <erro>100</erro>\n    </ConsultaItemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaLote",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f0b87d4-4904-4e23-b27a-d758aa92a016",
+						"exec": [
+							"var jsonObject = xml2Json(pm.response.text());\r",
+							"jsonObject['s:Envelope']['s:Body']['ConsultaLoteResponse']['lote']"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "b622343d-3eac-4183-a9da-ed1f276db0d8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaLote"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaLote xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigolote>0000035233</codigolote>\n    </ConsultaLote>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "6871b1a1-0917-4247-bb14-a253fd32204b",
+					"name": "ConsultaLote response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaLote"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaLote xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigolote>string</codigolote>\n    </ConsultaLote>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://infind.toledobrasil.com:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"name": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"Envelope\": {\n        \"Body\": {\n            \"ConsultaLoteResponse\": {\n                \"lote\": {\n                    \"Certificado\": \"\",\n                    \"ClienteFornecedor\": \"\",\n                    \"CodigoFabricante\": \"\",\n                    \"CodigoItem\": \"\",\n                    \"CodigoLote\": \"\",\n                    \"CodigoOrdemCompra\": \"\",\n                    \"CodigoTipoLote\": \"\",\n                    \"Condicao\": \"LIBERADO\",\n                    \"DataCriacao\": \"\",\n                    \"DataFabricacao\": \"\",\n                    \"LoteCliente\": \"\",\n                    \"LoteFornecedor\": \"\",\n                    \"NomeFabricante\": \"\",\n                    \"NotaFiscal\": \"\",\n                    \"Observacao1\": \"\",\n                    \"Observacao10\": \"\",\n                    \"Observacao11\": \"\",\n                    \"Observacao12\": \"\",\n                    \"Observacao13\": \"\",\n                    \"Observacao14\": \"\",\n                    \"Observacao15\": \"\",\n                    \"Observacao16\": \"\",\n                    \"Observacao17\": \"\",\n                    \"Observacao18\": \"\",\n                    \"Observacao19\": \"\",\n                    \"Observacao2\": \"\",\n                    \"Observacao20\": \"\",\n                    \"Observacao21\": \"\",\n                    \"Observacao22\": \"\",\n                    \"Observacao23\": \"\",\n                    \"Observacao24\": \"\",\n                    \"Observacao25\": \"\",\n                    \"Observacao26\": \"\",\n                    \"Observacao27\": \"\",\n                    \"Observacao28\": \"\",\n                    \"Observacao29\": \"\",\n                    \"Observacao3\": \"\",\n                    \"Observacao30\": \"\",\n                    \"Observacao4\": \"\",\n                    \"Observacao5\": \"\",\n                    \"Observacao6\": \"\",\n                    \"Observacao7\": \"\",\n                    \"Observacao8\": \"\",\n                    \"Observacao9\": \"\",\n                    \"PesoNotaFiscal\": \"\",\n                    \"Potencia\": 0,\n                    \"QuantidadeVolumes\": \"\",\n                    \"ValidadeLote\": \"\"\n                },\n                \"erro\": 1\n            }\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ConsultaEstruturas",
+			"id": "e394c6e5-99a6-4dff-9533-ba3529ce9b9d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaEstruturas"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaEstruturas xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItemPai>9876</codigoItemPai>\n      <codigoEstrutura>1019764</codigoEstrutura>\n    </ConsultaEstruturas>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "88c0b8e0-160f-4e6e-be31-b2f34812b36a",
+					"name": "ConsultaEstruturas response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaEstruturas"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaEstruturas xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItemPai>string</codigoItemPai>\n      <codigoEstrutura>string</codigoEstrutura>\n    </ConsultaEstruturas>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaEstruturasResponse xmlns=\"http://tempuri.org/\">\n      <estrutura/>\n      <erro>100</erro>\n    </ConsultaEstruturasResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaVolume",
+			"id": "b704628d-a8c4-48ee-9fcf-1ed23c38930f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaVolume"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaVolume xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <numeroVolume>2</numeroVolume>\n    </ConsultaVolume>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "f6426595-ffd3-48a6-b942-eb9a2ef7d692",
+					"name": "ConsultaVolume response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaVolume"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaVolume xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <numeroVolume>100</numeroVolume>\n    </ConsultaVolume>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaVolumeResponse xmlns=\"http://tempuri.org/\">\n      <volume/>\n      <erro>100</erro>\n    </ConsultaVolumeResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaOrdem",
+			"id": "9b78729f-22d6-43a4-b9d0-2d890a9972bb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaOrdem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoFluxo>FLUXO100</codigoFluxo>\n      <codigoOrdem>1019764</codigoOrdem>\n    </ConsultaOrdem>\n  </soap:Body>\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "c0063443-8f54-4752-a2d1-26f32d10c91f",
+					"name": "ConsultaOrdem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaOrdem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoFluxo>string</codigoFluxo>\n      <codigoOrdem>string</codigoOrdem>\n    </ConsultaOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaOrdemResponse xmlns=\"http://tempuri.org/\">\n      <ordem/>\n      <erro>100</erro>\n    </ConsultaOrdemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaCertificado",
+			"id": "98fc69f1-0338-4369-9b5e-87f5079df74b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaCertificado"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaCertificado xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <numeroCertificado>1</numeroCertificado>\n    </ConsultaCertificado>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "2260826a-06ae-4f8c-9a6d-237b2a8690db",
+					"name": "ConsultaCertificado response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaCertificado"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaCertificado xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <numeroCertificado>string</numeroCertificado>\n    </ConsultaCertificado>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaCertificadoResponse xmlns=\"http://tempuri.org/\">\n      <certificado/>\n      <erro>100</erro>\n    </ConsultaCertificadoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaOrdem Lista",
+			"id": "96dc72f5-cb0a-481c-ad93-70b6d85a1a90",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaOrdem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao\" xmlns:tol1=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\" xmlns:tol2=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.ConfiguracaoLimpeza\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ImportaOrdem>\n         <tem:configuracao>\n            <tol1:CalcularTolerancia>0</tol1:CalcularTolerancia>\n            <tol1:RegraImportacao>Por_Sequencia_Linha_Sublinha</tol1:RegraImportacao>\n            <tol1:SuspenderOrdemComErro>1</tol1:SuspenderOrdemComErro>\n         </tem:configuracao>\n         <tem:ordem>\n            <tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n            <tol:CodigoFluxo>FLUXO100</tol:CodigoFluxo>\n            <tol:CodigoOrdem>1019765</tol:CodigoOrdem>\n            <tol:Condicao>Liberada</tol:Condicao>\n            <tol:Estabelecimento>ADCOS</tol:Estabelecimento>\n            <tol:ItemPai>\n            \t<tol:CodigoItem>9680</tol:CodigoItem>\n            </tol:ItemPai>\n            <tol:Lista>\n               <tol:EListaIntegracao>\n                  <tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n                  <tol:Fase>1</tol:Fase>\n                  <tol:Item>\n                     <tol:CodigoItem>10465</tol:CodigoItem>                     \n                  </tol:Item>\n                  <tol:Lote>\n                     <tol:CodigoLote>0000045935</tol:CodigoLote>                     \n                  </tol:Lote>\n                  <tol:NumeroLinhaLista>1</tol:NumeroLinhaLista>\n                  <tol:Observacao1>FASE A</tol:Observacao1>\n                  <tol:PesagemFracionada>true</tol:PesagemFracionada>\n                  <tol:QtdeMaxima>0.360</tol:QtdeMaxima>\n                  <tol:QtdeMinima>0.360</tol:QtdeMinima>\n                  <tol:QtdePadrao>0.360</tol:QtdePadrao>\n                  <tol:QtdeTeorica>0.360</tol:QtdeTeorica>\n                  <tol:RealizaAntecipacaoCarga>0</tol:RealizaAntecipacaoCarga>\n                  <tol:SequenciaLista>1</tol:SequenciaLista>\n                  <tol:StatusLinha>0</tol:StatusLinha>\n               </tol:EListaIntegracao>\n               <tol:EListaIntegracao>\n                  <tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n                  <tol:Fase>1</tol:Fase>\n                  <tol:Item>\n                     <tol:CodigoItem>11073</tol:CodigoItem>                     \n                  </tol:Item>\n                  <tol:Lote>\n                     <tol:CodigoLote>0000013640</tol:CodigoLote>                     \n                  </tol:Lote>\n                  <tol:NumeroLinhaLista>2</tol:NumeroLinhaLista>\n                  <tol:Observacao1>FASE B</tol:Observacao1>\n                  <tol:PesagemFracionada>true</tol:PesagemFracionada>\n                  <tol:QtdeMaxima>0.180</tol:QtdeMaxima>\n                  <tol:QtdeMinima>0.180</tol:QtdeMinima>\n                  <tol:QtdePadrao>0.180</tol:QtdePadrao>\n                  <tol:QtdeTeorica>0.180</tol:QtdeTeorica>\n                  <tol:RealizaAntecipacaoCarga>0</tol:RealizaAntecipacaoCarga>\n                  <tol:SequenciaLista>2</tol:SequenciaLista>\n                  <tol:StatusLinha>0</tol:StatusLinha>\n               </tol:EListaIntegracao>\n               <tol:EListaIntegracao>\n                  <tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n                  <tol:Fase>1</tol:Fase>\n                  <tol:Item>\n                     <tol:CodigoItem>14411</tol:CodigoItem>                     \n                  </tol:Item>\n                  <tol:Lote>\n                     <tol:CodigoLote>0000027860</tol:CodigoLote>                     \n                  </tol:Lote>\n                  <tol:NumeroLinhaLista>3</tol:NumeroLinhaLista>\n                  <tol:Observacao1>FASE C</tol:Observacao1>\n                  <tol:PesagemFracionada>true</tol:PesagemFracionada>\n                  <tol:QtdeMaxima>0.360</tol:QtdeMaxima>\n                  <tol:QtdeMinima>0.360</tol:QtdeMinima>\n                  <tol:QtdePadrao>0.360</tol:QtdePadrao>\n                  <tol:QtdeTeorica>0.360</tol:QtdeTeorica>\n                  <tol:RealizaAntecipacaoCarga>0</tol:RealizaAntecipacaoCarga>\n                  <tol:SequenciaLista>3</tol:SequenciaLista>\n                  <tol:StatusLinha>0</tol:StatusLinha>\n               </tol:EListaIntegracao>\n               <tol:EListaIntegracao>\n                  <tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n                  <tol:Fase>1</tol:Fase>\n                  <tol:Item>\n                     <tol:CodigoItem>14062</tol:CodigoItem>                     \n                  </tol:Item>\n                  <tol:Lote>\n                     <tol:CodigoLote>086428</tol:CodigoLote>                     \n                  </tol:Lote>\n                  <tol:NumeroLinhaLista>4</tol:NumeroLinhaLista>\n                  <tol:Observacao1>FASE D</tol:Observacao1>\n                  <tol:PesagemFracionada>true</tol:PesagemFracionada>\n                  <tol:QtdeMaxima>0.360</tol:QtdeMaxima>\n                  <tol:QtdeMinima>0.360</tol:QtdeMinima>\n                  <tol:QtdePadrao>0.360</tol:QtdePadrao>\n                  <tol:QtdeTeorica>0.360</tol:QtdeTeorica>\n                  <tol:RealizaAntecipacaoCarga>0</tol:RealizaAntecipacaoCarga>\n                  <tol:SequenciaLista>4</tol:SequenciaLista>\n                  <tol:StatusLinha>0</tol:StatusLinha>\n               </tol:EListaIntegracao>\n               <tol:EListaIntegracao>\n                  <tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n                  <tol:Fase>1</tol:Fase>\n                  <tol:Item>\n                     <tol:CodigoItem>10469</tol:CodigoItem>                     \n                  </tol:Item>\n                  <tol:Lote>\n                     <tol:CodigoLote>0000025240</tol:CodigoLote>                     \n                  </tol:Lote>\n                  <tol:NumeroLinhaLista>5</tol:NumeroLinhaLista>\n                  <tol:Observacao1>FASE E</tol:Observacao1>\n                  <tol:PesagemFracionada>true</tol:PesagemFracionada>\n                  <tol:QtdeMaxima>0.360</tol:QtdeMaxima>\n                  <tol:QtdeMinima>0.360</tol:QtdeMinima>\n                  <tol:QtdePadrao>0.360</tol:QtdePadrao>\n                  <tol:QtdeTeorica>0.360</tol:QtdeTeorica>\n                  <tol:RealizaAntecipacaoCarga>0</tol:RealizaAntecipacaoCarga>\n                  <tol:SequenciaLista>5</tol:SequenciaLista>\n                  <tol:StatusLinha>0</tol:StatusLinha>\n               </tol:EListaIntegracao>\n            </tol:Lista>\n            <tol:LotePai>                         \n               <tol:CodigoLote>0000037215</tol:CodigoLote>\n            </tol:LotePai>\n            <tol:OrdemMultipla>0</tol:OrdemMultipla>\n            <tol:TipoAtendimento>Lista</tol:TipoAtendimento>\n            <tol:TipoTotalizacao>Multiplicacao</tol:TipoTotalizacao>\n            <tol:UltimoSequencial>1</tol:UltimoSequencial>\n            <tol:Vezes>1</tol:Vezes>\n         </tem:ordem>\n      </tem:ImportaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "b1f51c9b-a64c-44d5-bd12-cba1710e324f",
+					"name": "ImportaOrdem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaOrdem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <ordem/>\n    </ImportaOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaOrdemResponse xmlns=\"http://tempuri.org/\">\n      <ordemResultado/>\n      <ErroLog>string</ErroLog>\n      <erro>100</erro>\n    </ImportaOrdemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaOrdem Livre Fluxo200",
+			"id": "5a7da685-f4af-4ad8-be91-9efae52e1814",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaOrdem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao\" xmlns:tol1=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\" xmlns:tol2=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.ConfiguracaoLimpeza\">\n<soapenv:Header/>\n<soapenv:Body>\n<tem:ImportaOrdem>\n<tem:configuracao>\n<tol1:CalcularTolerancia>0</tol1:CalcularTolerancia>\n<tol1:SuspenderOrdemComErro>1</tol1:SuspenderOrdemComErro>\n</tem:configuracao>\n<tem:ordem>\n<tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n<tol:CodigoFluxo>FLUXO200</tol:CodigoFluxo>\n<tol:CodigoOrdem>Almoxarife</tol:CodigoOrdem>\n<tol:Condicao>Liberada</tol:Condicao>\n<tol:Estabelecimento>ADCOS</tol:Estabelecimento>\n<tol:TipoAtendimento>Livre</tol:TipoAtendimento>\n</tem:ordem>\n</tem:ImportaOrdem>\n</soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "b9b7fc17-b2ca-450c-97bc-63b5cce13b9c",
+					"name": "ImportaOrdem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaOrdem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <ordem/>\n    </ImportaOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaOrdemResponse xmlns=\"http://tempuri.org/\">\n      <ordemResultado/>\n      <ErroLog>string</ErroLog>\n      <erro>100</erro>\n    </ImportaOrdemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaOrdem Livre Fluxo300",
+			"id": "bd2a17bb-40eb-4f9f-b2f0-5a33557b7c8d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaOrdem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao\" xmlns:tol1=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\" xmlns:tol2=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.ConfiguracaoLimpeza\">\n<soapenv:Header/>\n<soapenv:Body>\n<tem:ImportaOrdem>\n<tem:configuracao>\n<tol1:CalcularTolerancia>0</tol1:CalcularTolerancia>\n<tol1:SuspenderOrdemComErro>1</tol1:SuspenderOrdemComErro>\n</tem:configuracao>\n<tem:ordem>\n<tol:CentroTrabalho>CT01</tol:CentroTrabalho>\n<tol:CodigoFluxo>FLUXO300</tol:CodigoFluxo>\n<tol:CodigoOrdem>Descarte</tol:CodigoOrdem>\n<tol:Condicao>Liberada</tol:Condicao>\n<tol:Estabelecimento>ADCOS</tol:Estabelecimento>\n<tol:TipoAtendimento>Livre</tol:TipoAtendimento>\n</tem:ordem>\n</tem:ImportaOrdem>\n</soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "efddc6ce-d510-4c72-95f4-674b0d09f75f",
+					"name": "ImportaOrdem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaOrdem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <ordem/>\n    </ImportaOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaOrdemResponse xmlns=\"http://tempuri.org/\">\n      <ordemResultado/>\n      <ErroLog>string</ErroLog>\n      <erro>100</erro>\n    </ImportaOrdemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaEmbarque",
+			"id": "4d1e30d0-14b1-41c7-9074-34ed765a3b36",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaEmbarque"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaEmbarque xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <Embarque/>\n    </ImportaEmbarque>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "f3e9e772-817d-4d07-9c7f-05149833ca88",
+					"name": "ImportaEmbarque response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaEmbarque"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaEmbarque xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <Embarque/>\n    </ImportaEmbarque>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaEmbarqueResponse xmlns=\"http://tempuri.org/\">\n      <EmbarqueResultado/>\n      <erro>100</erro>\n    </ImportaEmbarqueResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaItem",
+			"id": "6362e8ca-176d-4346-a189-3af9b7d0e472",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaItem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao\" xmlns:tol1=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\" xmlns:tol2=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.ConfiguracaoLimpeza\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ImportaItem>\n         <tem:item>\n            <tol:AceitaToleranciaPesagem>true</tol:AceitaToleranciaPesagem>\n            <tol:CodigoItem>3333</tol:CodigoItem>\n            <tol:ControlaLote>true</tol:ControlaLote>\n            <tol:Embalagens>\n               <tol:EEmbalagemItemIntegracao>\n                  <tol:CodigoEmbalagem>EMB</tol:CodigoEmbalagem>\n                  <tol:IdentificaVolume>true</tol:IdentificaVolume>\n                  <tol:Nivel>Primario</tol:Nivel>\n                  <tol:NumeroEmbalagem>1</tol:NumeroEmbalagem>\n               </tol:EEmbalagemItemIntegracao>\n               <tol:EEmbalagemItemIntegracao>\n                  <tol:CodigoEmbalagem>EMB</tol:CodigoEmbalagem>\n                  <tol:IdentificaVolume>true</tol:IdentificaVolume>\n                  <tol:Nivel>Secundario</tol:Nivel>\n                  <tol:NumeroEmbalagem>2</tol:NumeroEmbalagem>\n               </tol:EEmbalagemItemIntegracao>\n            </tol:Embalagens>\n            <tol:Inativo>false</tol:Inativo>\n            <tol:MelhorBalanca>Indiferente</tol:MelhorBalanca>\n            <tol:NomeItem>MATERIA PRIMA 3333</tol:NomeItem>\n            <tol:ObrigaPesagemItem>true</tol:ObrigaPesagemItem>\n            <tol:Tipo>MATERIAPRIMA</tol:Tipo>\n            <tol:UnidadeMedidaControle>kg</tol:UnidadeMedidaControle>\n         </tem:item>\n      </tem:ImportaItem>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl2}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "952702eb-e030-4de8-856f-4d6c769cc701",
+					"name": "ImportaItem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaItem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <item/>\n    </ImportaItem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaItemResponse xmlns=\"http://tempuri.org/\">\n      <itemResultado/>\n      <erro>100</erro>\n    </ImportaItemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaEmbalagem",
+			"id": "3444ab30-07db-4cf1-a4b4-135a7552c2d7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaEmbalagem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaEmbalagem xmlns=\"http://tempuri.org/\">\n      <embalagem>\n            <CodigoEmbalagem>CX</CodigoEmbalagem>\n            <Descricao>CAIXA</Descricao>\n            <PesoMaximo>10</PesoMaximo>\n            <PesoMinimo>10</PesoMinimo>\n            <PesoPadrao>10</PesoPadrao>\n            <Tipo>EMBALAGEM</Tipo>\n            <UnidadeMedidaControle>KG</UnidadeMedidaControle>\n            <UnidadeMedidaPeso>KG</UnidadeMedidaPeso>\n         </embalagem>\n    </ImportaEmbalagem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "00f50e75-2869-4c55-b770-c9dc83b93334",
+					"name": "ImportaEmbalagem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaEmbalagem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaEmbalagem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <embalagem/>\n    </ImportaEmbalagem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaEmbalagemResponse xmlns=\"http://tempuri.org/\">\n      <embalagemResultado/>\n      <erro>100</erro>\n    </ImportaEmbalagemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaLote",
+			"id": "3eb6ae3c-beb6-41e8-a739-22699feab756",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaLote"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao\" xmlns:tol1=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\" xmlns:tol2=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.ConfiguracaoLimpeza\">\n<soapenv:Header/>\n<soapenv:Body>\n<tem:ImportaLote>\n<tem:configuracao>\n<tol1:CalculaValidadeAutomaticamente>0</tol1:CalculaValidadeAutomaticamente>\n</tem:configuracao>\n<tem:lote>\n<tol:CodigoLote>3333</tol:CodigoLote>\n<tol:Condicao>LIBERADO</tol:Condicao>\n<tol:DataCriacao>2024-05-13T14:28:00</tol:DataCriacao>\n<tol:DataFabricacao>2024-05-13T14:28:00</tol:DataFabricacao>\n<tol:ValidadeLote>2024-07-13T14:28:00</tol:ValidadeLote>\n</tem:lote>\n</tem:ImportaLote>\n</soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "83a23d23-7fe3-4d4b-821f-66bc153f9059",
+					"name": "ImportaLote response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaLote"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaLote xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <lote/>\n    </ImportaLote>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaLoteResponse xmlns=\"http://tempuri.org/\">\n      <loteResultado/>\n      <erro>100</erro>\n    </ImportaLoteResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaFormula",
+			"id": "ec1a0cd2-5699-4c8f-bf55-801e9580b7d8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaFormula"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaFormula xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <formula/>\n    </ImportaFormula>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "160b24b9-e04a-4d92-be65-a0508c061703",
+					"name": "ImportaFormula response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaFormula"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaFormula xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <formula/>\n    </ImportaFormula>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaFormulaResponse xmlns=\"http://tempuri.org/\">\n      <formulaResultado/>\n      <erro>100</erro>\n    </ImportaFormulaResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaFamilia",
+			"id": "4fd9e201-b0f9-45e9-82d0-a7d747bf0295",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaFamilia"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaFamilia xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <familia/>\n    </ImportaFamilia>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "f57b681a-7928-47af-a773-bffec6ce4d85",
+					"name": "ImportaFamilia response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaFamilia"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaFamilia xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <familia/>\n    </ImportaFamilia>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaFamiliaResponse xmlns=\"http://tempuri.org/\">\n      <familiaResultado/>\n      <erro>100</erro>\n    </ImportaFamiliaResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaRota",
+			"id": "8ce3fefc-9b7a-494a-9c75-7cfffad2860a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaRota"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaRota xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <Rota/>\n    </ImportaRota>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "b3737ff8-8eb1-4cc5-bde0-37a7742c8128",
+					"name": "ImportaRota response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaRota"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaRota xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <Rota/>\n    </ImportaRota>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaRotaResponse xmlns=\"http://tempuri.org/\">\n      <RotaResultado/>\n      <erro>100</erro>\n    </ImportaRotaResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaClassificacao",
+			"id": "3a6e59b1-d2a7-405e-ae18-bb97660d896d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaClassificacao"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaClassificacao xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <classificacao/>\n    </ImportaClassificacao>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "f4fd7f8f-384f-496b-9055-08a4db2d1623",
+					"name": "ImportaClassificacao response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaClassificacao"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaClassificacao xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <classificacao/>\n    </ImportaClassificacao>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaClassificacaoResponse xmlns=\"http://tempuri.org/\">\n      <classificacaoResultado/>\n      <erro>100</erro>\n    </ImportaClassificacaoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "FechaAgrupamento",
+			"id": "8c384d01-8e9e-4c8c-a050-a04ccefe2f38",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/FechaAgrupamento"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <FechaAgrupamento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dadosFecharAgrupamento/>\n    </FechaAgrupamento>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "7b181dac-01cb-40be-9bca-988aa0a4780b",
+					"name": "FechaAgrupamento response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/FechaAgrupamento"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <FechaAgrupamento xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dadosFecharAgrupamento/>\n    </FechaAgrupamento>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <FechaAgrupamentoResponse xmlns=\"http://tempuri.org/\">\n      <retorno/>\n    </FechaAgrupamentoResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ExportaOrdens",
+			"id": "5e674d07-54db-4b2d-bd7a-5a574acd6cdf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ExportaOrdens"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ExportaOrdens xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dados/>\n    </ExportaOrdens>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "d7e11109-fe65-4611-981f-a7a36798cb17",
+					"name": "ExportaOrdens response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ExportaOrdens"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ExportaOrdens xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dados/>\n    </ExportaOrdens>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ExportaOrdensResponse xmlns=\"http://tempuri.org/\">\n      <retorno/>\n    </ExportaOrdensResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConfirmaExportacaoOrdens",
+			"id": "5a7e1d28-38a6-4523-8398-2d6dcd716273",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConfirmaExportacaoOrdens"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConfirmaExportacaoOrdens xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dados/>\n    </ConfirmaExportacaoOrdens>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "26424f8b-1776-4fa0-a40c-6edb318f366e",
+					"name": "ConfirmaExportacaoOrdens response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConfirmaExportacaoOrdens"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConfirmaExportacaoOrdens xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <dados/>\n    </ConfirmaExportacaoOrdens>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConfirmaExportacaoOrdensResponse xmlns=\"http://tempuri.org/\">\n      <retorno/>\n    </ConfirmaExportacaoOrdensResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ImportaClienteFornecedor",
+			"id": "4c5abdb6-ea55-41eb-968b-af55eaa4bb63",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ImportaClienteFornecedor"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaClienteFornecedor xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <clienteFornecedor/>\n    </ImportaClienteFornecedor>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "d1f49634-a38d-4927-a5f4-320ba599cbc2",
+					"name": "ImportaClienteFornecedor response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ImportaClienteFornecedor"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaClienteFornecedor xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <clienteFornecedor/>\n    </ImportaClienteFornecedor>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ImportaClienteFornecedorResponse xmlns=\"http://tempuri.org/\">\n      <retorno/>\n    </ImportaClienteFornecedorResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "AlteraCondicaoOrdem",
+			"id": "2217c7cc-855e-424b-bdb6-1424ab5dc8a7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/AlteraCondicaoOrdem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <AlteraCondicaoOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <Ordem>33333</Ordem>\n    </AlteraCondicaoOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "caa2cdb0-0d8c-472e-b6c1-e1d8a4dcbbe3",
+					"name": "AlteraCondicaoOrdem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/AlteraCondicaoOrdem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <AlteraCondicaoOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <Ordem/>\n    </AlteraCondicaoOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <AlteraCondicaoOrdemResponse xmlns=\"http://tempuri.org/\">\n      <retorno/>\n    </AlteraCondicaoOrdemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "EstornaVolume",
+			"id": "65f18f18-4318-477f-8e04-fabc8aeeef10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/EstornaVolume"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <EstornaVolume xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <estorno/>\n    </EstornaVolume>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "050d10bf-95a0-4fb7-8644-16a747175621",
+					"name": "EstornaVolume response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/EstornaVolume"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <EstornaVolume xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <estorno/>\n    </EstornaVolume>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <EstornaVolumeResponse xmlns=\"http://tempuri.org/\">\n      <retorno/>\n    </EstornaVolumeResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "Help",
+			"id": "e32bddab-ddd2-4aaf-b78b-5ee8d20a974b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/Help"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <Help xmlns=\"http://tempuri.org/\"/>\n  </soap:Body>\n</soap:Envelope>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "8d1e8d78-e3fc-40ca-b437-1db7230b2707",
+					"name": "Help response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/Help"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <Help xmlns=\"http://tempuri.org/\"/>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <HelpResponse xmlns=\"http://tempuri.org/\">\n      <HelpResult>string</HelpResult>\n    </HelpResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "632d1cfe-1397-4ef2-9ff1-424cf045d6db",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6dfd1cf7-3d08-4502-81d0-69f5dc1ee2f7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BasicHttpBinding_IMWS_ServiceBaseUrl",
+			"value": "http://0.0.0.0:8733",
+			"type": "any"
+		}
+	]
+}
