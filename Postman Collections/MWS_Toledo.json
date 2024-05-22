@@ -58,9 +58,8 @@
 						"value": "http://tempuri.org/IMWS_Service/ObtemVersao"
 					},
 					{
-						"key": "ResponseFormat",
-						"value": "WebMessageFormat.Json",
-						"type": "text"
+						"key": "Server",
+						"value": "Microsoft-HTTPAPI/2.0"
 					}
 				],
 				"body": {
@@ -72,7 +71,23 @@
 						}
 					}
 				},
-				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+				"url": {
+					"raw": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/?singleWsdl",
+					"host": [
+						"{{BasicHttpBinding_IMWS_ServiceBaseUrl}}"
+					],
+					"path": [
+						"MWS_INTEGRACAO",
+						"MWS_SERVICE",
+						""
+					],
+					"query": [
+						{
+							"key": "singleWsdl",
+							"value": null
+						}
+					]
+				}
 			},
 			"response": [
 				{
@@ -491,7 +506,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>513021</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>45</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
 					"options": {
 						"raw": {
 							"language": "xml"
