@@ -807,7 +807,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoFluxo>FLUXO100</codigoFluxo>\n      <codigoOrdem>1019823</codigoOrdem>\n    </ConsultaOrdem>\n  </soap:Body>\n</soap:Envelope>",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>true</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019823</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
 					"options": {
 						"raw": {
 							"language": "xml"
