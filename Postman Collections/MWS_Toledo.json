@@ -1240,7 +1240,7 @@
 						}
 					}
 				},
-				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl2}}/MWS_INTEGRACAO/MWS_SERVICE/"
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
 			},
 			"response": [
 				{
