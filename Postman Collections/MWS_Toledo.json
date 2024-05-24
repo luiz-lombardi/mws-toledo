@@ -591,7 +591,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaLote xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigolote>0000025498</codigolote>\n    </ConsultaLote>\n  </soap:Body>\n</soap:Envelope>\n",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaLote xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigolote>0000044900</codigolote>\n    </ConsultaLote>\n  </soap:Body>\n</soap:Envelope>\n",
 					"options": {
 						"raw": {
 							"language": "xml"
