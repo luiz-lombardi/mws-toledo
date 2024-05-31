@@ -506,7 +506,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>506257</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>16354</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
 					"options": {
 						"raw": {
 							"language": "xml"
@@ -807,7 +807,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>false</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019962</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>true</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019962</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
 					"options": {
 						"raw": {
 							"language": "xml"
