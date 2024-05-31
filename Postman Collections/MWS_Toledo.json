@@ -506,7 +506,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>16354</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaItem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoItem>506257</codigoItem>\n    </ConsultaItem>\n  </soap:Body>\n</soap:Envelope>\n",
 					"options": {
 						"raw": {
 							"language": "xml"
@@ -807,7 +807,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>true</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019962</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>false</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019962</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
 					"options": {
 						"raw": {
 							"language": "xml"
@@ -819,6 +819,77 @@
 			"response": [
 				{
 					"id": "c0063443-8f54-4752-a2d1-26f32d10c91f",
+					"name": "ConsultaOrdem response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "http://tempuri.org/IMWS_Service/ConsultaOrdem"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaOrdem xmlns=\"http://tempuri.org/\">\n      <configuracao/>\n      <codigoFluxo>string</codigoFluxo>\n      <codigoOrdem>string</codigoOrdem>\n    </ConsultaOrdem>\n  </soap:Body>\n</soap:Envelope>\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:8733/MWS_INTEGRACAO/MWS_SERVICE/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/xml; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <ConsultaOrdemResponse xmlns=\"http://tempuri.org/\">\n      <ordem/>\n      <erro>100</erro>\n    </ConsultaOrdemResponse>\n  </soap:Body>\n</soap:Envelope>\n"
+				}
+			]
+		},
+		{
+			"name": "ConsultaOrdem Detalhe",
+			"id": "72404c97-fa09-4ace-8b3d-bd664aff75cd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IMWS_Service/ConsultaOrdem"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>true</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019962</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "{{BasicHttpBinding_IMWS_ServiceBaseUrl}}/MWS_INTEGRACAO/MWS_SERVICE/"
+			},
+			"response": [
+				{
+					"id": "8fce78c9-831e-41dd-8ea0-57a75d938c5d",
 					"name": "ConsultaOrdem response",
 					"originalRequest": {
 						"method": "POST",
