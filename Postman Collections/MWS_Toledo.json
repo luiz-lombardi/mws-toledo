@@ -807,7 +807,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>false</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019962</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:tol=\"http://schemas.datacontract.org/2004/07/Toledo.MWS.Comuns.VO.Integracao.Configuracao\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <tem:ConsultaOrdem>\n         <tem:configuracao>\n            <tol:ConsultaHistoricoOrdem>true</tol:ConsultaHistoricoOrdem>\n            <tol:ConsultaListaOrdem>false</tol:ConsultaListaOrdem>\n            <tol:ConsultaMovimentosOrdem>true</tol:ConsultaMovimentosOrdem>\n         </tem:configuracao>\n         <tem:codigoFluxo>FLUXO100</tem:codigoFluxo>\n         <tem:codigoOrdem>1019866</tem:codigoOrdem>\n      </tem:ConsultaOrdem>\n   </soapenv:Body>\n</soapenv:Envelope>",
 					"options": {
 						"raw": {
 							"language": "xml"
